@@ -2,8 +2,8 @@ import React from 'react';
 
 export const Purchase = () => {
     return (
-        <div style={{ height: 90 + 'vh' }}>
-            <p>Dados da Venda</p>
+        <div>
+            <p className="block-title">Dados da Venda</p>
 
             <div className="form-group">
                 <label for="seller-select">Escolha um vendedor</label>
@@ -19,11 +19,13 @@ export const Purchase = () => {
                 </select>
             </div>
 
-            <div className="price-footer">
+            <div className="form-group price-footer">
                 <div>
                     <div className="float-left">Valor total da venda: </div>
                     <div className="float-right">R$ 136,10</div>
                 </div>
+
+                <br />
 
                 <div>
                     <div className="float-left">

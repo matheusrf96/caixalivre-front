@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-md navbar-light bg-light" style={{ height: 10 + 'vh' }}>
+        <nav className="navbar navbar-expand-md navbar-light bg-light">
             <div className="container">
                 <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                     <ul className="navbar-nav mr-auto">
