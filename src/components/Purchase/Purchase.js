@@ -1,6 +1,16 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux'
+
+import { getCustomers } from '../../store/actions'
+
 
 export const Purchase = () => {
+    const dispatch = useDispatch();
+    let customers = useSelector(state => state.app.customersList)
+
+    if (customers.length === 0)
+        customers = dispatch(getCustomers())
+
     return (
         <div>
             <p className="block-title">Dados da Venda</p>
@@ -9,6 +19,9 @@ export const Purchase = () => {
                 <label for="seller-select">Escolha um vendedor</label>
                 <select className="form-control" id="seller-select">
                     <option value='' disabled></option>
+                    { customers && customers.map((customer, id) => {
+                        return <option value={`${ customer.id }`}>{ customer.name }</option>
+                    }) }
                 </select>
 
                 <br />

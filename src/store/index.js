@@ -1,8 +1,13 @@
-import { createStore } from 'redux'
+import { applyMiddleware, createStore } from 'redux'
+import thunk from 'redux-thunk'
 
 import reducer from "./reducer"
 
 export const INITIAL_STATE = {
+    'app': {
+        'customersList': [],
+        'sellersList': [],
+    },
     'purchase': {
         'customer': null,
         'seller': null,
@@ -10,4 +15,4 @@ export const INITIAL_STATE = {
     }
 }
 
-export default createStore(reducer, INITIAL_STATE)
+export default createStore(reducer, INITIAL_STATE, applyMiddleware(thunk))
